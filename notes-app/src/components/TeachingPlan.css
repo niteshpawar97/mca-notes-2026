@@ -1,0 +1,150 @@
+.plan {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 24px 60px;
+}
+
+.plan-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.plan-header h1 {
+  font-size: 36px;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 4px;
+}
+
+.plan-header-hi {
+  font-size: 20px;
+  color: #6366f1;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+.plan-meta {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.plan-meta span {
+  background: #f1f5f9;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 13px;
+  color: #475569;
+  font-weight: 500;
+}
+
+.plan-weeks {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.plan-week {
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  background: white;
+}
+
+.plan-week-header {
+  padding: 16px 24px;
+  color: white;
+}
+
+.plan-week-header h2 {
+  font-size: 18px;
+  font-weight: 600;
+  color: white;
+  margin-bottom: 2px;
+}
+
+.plan-week-header p {
+  font-size: 14px;
+  opacity: 0.85;
+}
+
+.plan-days {
+  padding: 8px 0;
+}
+
+.plan-day {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 12px 24px;
+  border-bottom: 1px solid #f1f5f9;
+  transition: background 0.15s;
+}
+
+.plan-day:last-child {
+  border-bottom: none;
+}
+
+.plan-day:hover {
+  background: #f8fafc;
+}
+
+.plan-day-badge {
+  flex-shrink: 0;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  margin-top: 2px;
+  white-space: nowrap;
+}
+
+.plan-day-content {
+  flex: 1;
+}
+
+.plan-day-en {
+  font-size: 14px;
+  color: #1e293b;
+  font-weight: 500;
+  margin-bottom: 2px;
+}
+
+.plan-day-hi {
+  font-size: 13px;
+  color: #8b5cf6;
+}
+
+@media (max-width: 1024px) {
+  .plan {
+    padding: 60px 24px 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .plan {
+    padding: 60px 16px 40px;
+  }
+
+  .plan-header h1 {
+    font-size: 24px;
+  }
+
+  .plan-header-hi {
+    font-size: 16px;
+  }
+
+  .plan-meta {
+    gap: 8px;
+  }
+
+  .plan-meta span {
+    font-size: 11px;
+    padding: 4px 10px;
+  }
+
+  .plan-day {
+    padding: 10px 16px;
+  }
+}

@@ -1,0 +1,178 @@
+.downloads {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 24px 60px;
+}
+
+.downloads-header {
+  text-align: center;
+  margin-bottom: 36px;
+}
+
+.downloads-header h1 {
+  font-size: 36px;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 6px;
+}
+
+.downloads-sub {
+  color: #64748b;
+  font-size: 15px;
+}
+
+.downloads-weeks {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.dl-week {
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  background: white;
+}
+
+.dl-week-header {
+  padding: 14px 24px;
+  color: white;
+}
+
+.dl-week-header h2 {
+  font-size: 17px;
+  font-weight: 600;
+  color: white;
+  margin-bottom: 2px;
+}
+
+.dl-week-header p {
+  font-size: 13px;
+  opacity: 0.85;
+}
+
+.dl-days {
+  padding: 4px 0;
+}
+
+.dl-day {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 24px;
+  border-bottom: 1px solid #f1f5f9;
+  transition: background 0.15s;
+}
+
+.dl-day:last-child {
+  border-bottom: none;
+}
+
+.dl-day:hover {
+  background: #f8fafc;
+}
+
+.dl-day-info {
+  flex: 1;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  min-width: 0;
+}
+
+.dl-day-badge {
+  flex-shrink: 0;
+  padding: 4px 12px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.dl-day-topics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.dl-topic-chip {
+  font-size: 12px;
+  background: #f1f5f9;
+  color: #475569;
+  padding: 3px 10px;
+  border-radius: 12px;
+  white-space: nowrap;
+}
+
+.dl-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+.dl-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  filter: brightness(1.1);
+}
+
+.dl-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.dl-spinner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top-color: white;
+  border-radius: 50%;
+  animation: dlspin 0.8s linear infinite;
+}
+
+@keyframes dlspin {
+  to { transform: rotate(360deg); }
+}
+
+@media (max-width: 1024px) {
+  .downloads {
+    padding: 60px 24px 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .downloads {
+    padding: 60px 16px 40px;
+  }
+
+  .downloads-header h1 {
+    font-size: 24px;
+  }
+
+  .dl-day {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+    padding: 12px 16px;
+  }
+
+  .dl-day-info {
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .dl-btn {
+    align-self: flex-end;
+  }
+}
