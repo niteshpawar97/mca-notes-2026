@@ -6,6 +6,8 @@ Complete teaching/study material for **MCA First Semester (RGPV Bhopal)** — an
 
 | Code | Subject | Units |
 |------|---------|-------|
+| Bridge Course | Basic Computer Knowledge | 5 |
+| Bridge Course | Mathematics | 5 |
 | MCA 101 | Programming in C with Data Structure | 5 |
 | MCA 102 | Statistical Mathematics | 5 |
 | MCA 103 | Operating System and Architecture | 5 |
@@ -14,7 +16,7 @@ Complete teaching/study material for **MCA First Semester (RGPV Bhopal)** — an
 | MCA 106 | C and DS Lab | 13 programs |
 | MCA 107 | Operating System Lab | 8 programs |
 
-Syllabus source: `I_Sem_Syllabus_MCA_041120040757.pdf` (official RGPV syllabus, included in this repo).
+Syllabus source: `I_Sem_Syllabus_MCA_041120040757.pdf` and `Bridge course_MCA070825033928.pdf` (official RGPV syllabi, included in this repo).
 
 ## What's Inside
 

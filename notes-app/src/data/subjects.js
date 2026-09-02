@@ -22,6 +22,114 @@ function getContent(code, topicId) {
 
 const rawSubjects = [
   {
+    code: 'bridge-computer',
+    title: 'Bridge Course',
+    subtitle: 'Basic Computer Knowledge',
+    subtitleHi: 'बेसिक कंप्यूटर ज्ञान',
+    icon: '🖱️',
+    color: '#0d9488',
+    type: 'bridge',
+    units: [
+      {
+        id: 1,
+        title: 'Unit 1',
+        subtitle: 'Introduction to Computers',
+        topics: [
+          { id: 'bcc-computer-basics', title: 'Definition, Types & Evolution of Computers', titleHi: 'कंप्यूटर की परिभाषा, प्रकार और विकास' },
+          { id: 'bcc-number-systems', title: 'Number Systems — Decimal, Binary, Octal, Hexadecimal', titleHi: 'संख्या पद्धतियाँ' },
+        ],
+      },
+      {
+        id: 2,
+        title: 'Unit 2',
+        subtitle: 'Components of a Computer System',
+        topics: [
+          { id: 'bcc-hardware', title: 'Hardware Components — Input, Output & Storage Devices', titleHi: 'हार्डवेयर घटक' },
+          { id: 'bcc-cpu', title: 'CPU — Control Unit, ALU & Registers', titleHi: 'CPU — कंट्रोल यूनिट, ALU और रजिस्टर' },
+        ],
+      },
+      {
+        id: 3,
+        title: 'Unit 3',
+        subtitle: 'System & Application Software',
+        topics: [
+          { id: 'bcc-system-software', title: 'System Software — OS, Device Drivers & Utilities', titleHi: 'सिस्टम सॉफ्टवेयर' },
+          { id: 'bcc-application-software', title: 'Application Software — Word Processors to Programming Languages', titleHi: 'एप्लीकेशन सॉफ्टवेयर' },
+        ],
+      },
+      {
+        id: 4,
+        title: 'Unit 4',
+        subtitle: 'Computer Networks',
+        topics: [
+          { id: 'bcc-networks-internet', title: 'Computer Networks, Internet & WWW Basics', titleHi: 'कंप्यूटर नेटवर्क और इंटरनेट' },
+          { id: 'bcc-ecommerce', title: 'Web Browsers, Email, URLs & E-commerce', titleHi: 'वेब ब्राउज़र, ईमेल और ई-कॉमर्स' },
+        ],
+      },
+      {
+        id: 5,
+        title: 'Unit 5',
+        subtitle: 'Programming Fundamentals',
+        topics: [
+          { id: 'bcc-programming-intro', title: 'Programming Languages — Low-level vs High-level, Compilers & Interpreters', titleHi: 'प्रोग्रामिंग भाषाएँ' },
+          { id: 'bcc-algorithms-flowcharts', title: 'Algorithms, Flowcharts & Problem Solving', titleHi: 'एल्गोरिदम और फ्लोचार्ट' },
+          { id: 'bcc-basic-concepts', title: 'Basic Programming Concepts — Variables, Data Types, Operators, Control Statements', titleHi: 'बेसिक प्रोग्रामिंग अवधारणाएँ' },
+        ],
+      },
+    ],
+  },
+  {
+    code: 'bridge-maths',
+    title: 'Bridge Course',
+    subtitle: 'Mathematics',
+    subtitleHi: 'गणित',
+    icon: '➗',
+    color: '#ca8a04',
+    type: 'bridge',
+    units: [
+      {
+        id: 1,
+        title: 'Unit 1',
+        subtitle: 'Matrices',
+        topics: [
+          { id: 'bcm-matrices', title: 'Matrices — Types, Operations & Properties', titleHi: 'मैट्रिक्स — प्रकार और संक्रियाएँ' },
+        ],
+      },
+      {
+        id: 2,
+        title: 'Unit 2',
+        subtitle: 'Determinants',
+        topics: [
+          { id: 'bcm-determinants', title: 'Determinants, Adjoint, Inverse & System of Linear Equations', titleHi: 'सारणिक, ऐड्जॉइंट और प्रतिलोम' },
+        ],
+      },
+      {
+        id: 3,
+        title: 'Unit 3',
+        subtitle: 'Straight Lines',
+        topics: [
+          { id: 'bcm-straight-lines', title: 'Straight Lines — Forms of Equations & Angle Between Lines', titleHi: 'सरल रेखाएँ' },
+        ],
+      },
+      {
+        id: 4,
+        title: 'Unit 4',
+        subtitle: 'Conic Sections',
+        topics: [
+          { id: 'bcm-conic-sections', title: 'Conic Sections — Circle, Parabola, Ellipse & Hyperbola', titleHi: 'शंकु परिच्छेद' },
+        ],
+      },
+      {
+        id: 5,
+        title: 'Unit 5',
+        subtitle: 'Introduction to 3D Geometry',
+        topics: [
+          { id: 'bcm-3d-geometry', title: 'Introduction to Three-Dimensional Geometry', titleHi: 'त्रि-आयामी ज्यामिति का परिचय' },
+        ],
+      },
+    ],
+  },
+  {
     code: 'mca101',
     title: 'MCA 101',
     subtitle: 'Programming in C with Data Structure',

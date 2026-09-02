@@ -1,6 +1,7 @@
 import './Home.css';
 
 function Home({ subjects, onSubjectSelect, onTopicSelect, onPlanClick, onDownloadsClick, singleSubjectView }) {
+  const bridgeSubjects = subjects.filter((s) => s.type === 'bridge');
   const theorySubjects = subjects.filter((s) => s.type === 'theory');
   const labSubjects = subjects.filter((s) => s.type === 'lab');
 
@@ -18,6 +19,27 @@ function Home({ subjects, onSubjectSelect, onTopicSelect, onPlanClick, onDownloa
           ? 'Neeche diye gaye unit par click karke padhna shuru karo'
           : 'MCA First Semester — RGPV Bhopal Syllabus ke hisaab se complete notes'}
       </p>
+
+      {!singleSubjectView && bridgeSubjects.length > 0 && (
+        <>
+          <h3 className="home-section-title">Bridge Courses (Pre-Semester)</h3>
+          <div className="home-cards">
+            {bridgeSubjects.map((subject) => (
+              <div
+                key={subject.code}
+                className="home-card"
+                style={{ borderTopColor: subject.color }}
+                onClick={() => onSubjectSelect(subject.code)}
+              >
+                <span className="home-card-icon">{subject.icon}</span>
+                <h3>{subject.subtitle}</h3>
+                <p className="hindi-text">{subject.subtitleHi}</p>
+                <span className="home-card-units">{subject.units.length} Units</span>
+              </div>
+            ))}
+          </div>
+        </>
+      )}
 
       {!singleSubjectView && theorySubjects.length > 0 && (
         <>
