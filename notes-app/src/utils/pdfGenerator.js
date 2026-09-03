@@ -215,6 +215,8 @@ export async function downloadUnitPDF(topics, subject, unit) {
   const { createRoot } = await import('react-dom/client');
   const { default: ReactMarkdown } = await import('react-markdown');
   const { default: remarkGfm } = await import('remark-gfm');
+  const { default: remarkMath } = await import('remark-math');
+  const { default: rehypeKatex } = await import('rehype-katex');
 
   let topicsHTML = '';
 
@@ -228,7 +230,8 @@ export async function downloadUnitPDF(topics, subject, unit) {
       const root = createRoot(tempDiv);
       root.render(
         createElement(ReactMarkdown, {
-          remarkPlugins: [remarkGfm],
+          remarkPlugins: [remarkGfm, remarkMath],
+          rehypePlugins: [rehypeKatex],
           components: {
             pre({ children }) {
               return children;

@@ -268,6 +268,18 @@
   font-weight: 600;
 }
 
+/* KaTeX math */
+.content-body .katex {
+  font-size: 1.08em;
+}
+
+.content-body .katex-display {
+  margin: 16px 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 4px 2px;
+}
+
 /* Navigation */
 .content-nav {
   display: flex;

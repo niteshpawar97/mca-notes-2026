@@ -1,9 +1,12 @@
 import { useRef, useState } from 'react';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
+import remarkMath from 'remark-math';
+import rehypeKatex from 'rehype-katex';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { oneDark } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import { downloadTopicPDF } from '../utils/pdfGenerator';
+import 'katex/dist/katex.min.css';
 import './Content.css';
 
 function getCalloutType(text) {
@@ -146,7 +149,11 @@ function Content({ subject, unit, topic, onNext, onPrev, nextTitle, prevTitle })
       </div>
 
       <div className="content-body" ref={contentBodyRef} id={`pdf-render-${topic.id}`}>
-        <ReactMarkdown remarkPlugins={[remarkGfm]} components={markdownComponents}>
+        <ReactMarkdown
+          remarkPlugins={[remarkGfm, remarkMath]}
+          rehypePlugins={[rehypeKatex]}
+          components={markdownComponents}
+        >
           {topic.content}
         </ReactMarkdown>
       </div>
