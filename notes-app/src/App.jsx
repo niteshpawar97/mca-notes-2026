@@ -4,6 +4,7 @@ import Content from './components/Content';
 import TeachingPlan from './components/TeachingPlan';
 import Downloads from './components/Downloads';
 import Home from './components/Home';
+import PrintUnit from './components/PrintUnit';
 import { subjects, allTopicsFlat } from './data/subjects';
 import './App.css';
 
@@ -16,6 +17,21 @@ function App() {
   const [sidebarOpen, setSidebarOpen] = useState(window.innerWidth >= 1024);
   const [lang, setLang] = useState('both');
   const [isMobile, setIsMobile] = useState(window.innerWidth < 1024);
+  const [printUnit, setPrintUnit] = useState(null);
+
+  // Print the real rendered DOM (not a canvas rasterization) so KaTeX
+  // equations come out correctly — see the note in App.css.
+  useEffect(() => {
+    if (!printUnit) return;
+    const raf = requestAnimationFrame(() => window.print());
+    return () => cancelAnimationFrame(raf);
+  }, [printUnit]);
+
+  useEffect(() => {
+    const onAfterPrint = () => setPrintUnit(null);
+    window.addEventListener('afterprint', onAfterPrint);
+    return () => window.removeEventListener('afterprint', onAfterPrint);
+  }, []);
 
   useEffect(() => {
     const onResize = () => {
@@ -146,7 +162,7 @@ function App() {
         {showPlan ? (
           <TeachingPlan subjects={subjects} />
         ) : showDownloads ? (
-          <Downloads topics={allTopicsFlat} />
+          <Downloads topics={allTopicsFlat} onPrintUnit={setPrintUnit} />
         ) : selectedTopic && selectedSubject ? (
           <Content
             subject={selectedSubject}
@@ -177,6 +193,8 @@ function App() {
           />
         )}
       </main>
+
+      <PrintUnit subject={printUnit?.subject} unit={printUnit?.unit} />
     </div>
   );
 }

@@ -74,7 +74,7 @@ Mean = λ
 Variance = λ           (Mean = Variance — ye Poisson ki khaas property hai)
 ```
 
-> Yaad Rakho — Poisson distribution me Mean = Variance = λ — ye uski sबसे unique property hai jo isse Binomial se distinguish karti hai. Exam me "Poisson ki property batao" poocha jaaye toh ye sabse pehle likho.
+> Yaad Rakho — Poisson distribution me Mean = Variance = λ — ye uski sabse unique property hai jo isse Binomial se distinguish karti hai. Exam me "Poisson ki property batao" poocha jaaye toh ye sabse pehle likho.
 
 ### Worked Example
 

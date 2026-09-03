@@ -65,3 +65,47 @@
     left: 14px;
   }
 }
+
+/* ===== Print / Save-as-PDF =====
+   We print the real rendered page instead of rasterizing it with
+   html2canvas — canvas-based rasterization cannot reproduce KaTeX's
+   precise CSS positioning (negative margins, vertical-align on strut
+   elements), so equations end up misplaced or collapsed. Printing
+   uses the browser's actual layout engine, which renders KaTeX
+   correctly because that's exactly how it's already on screen. */
+@media print {
+  .sidebar,
+  .sidebar-overlay,
+  .menu-toggle-btn,
+  .download-btn,
+  .content-nav,
+  .content-topbar,
+  .home-actions,
+  .home-icon,
+  .downloads,
+  .plan {
+    display: none !important;
+  }
+
+  .main-content {
+    margin-left: 0 !important;
+  }
+
+  .content {
+    max-width: 100% !important;
+    padding: 0 24px !important;
+  }
+
+  body,
+  .app {
+    background: white !important;
+  }
+
+  .katex-display,
+  .table-wrapper,
+  .callout,
+  .code-block,
+  pre {
+    page-break-inside: avoid;
+  }
+}

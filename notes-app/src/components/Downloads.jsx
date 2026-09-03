@@ -1,22 +1,7 @@
-import { useState } from 'react';
 import { subjects } from '../data/subjects';
-import { downloadUnitPDF } from '../utils/pdfGenerator';
 import './Downloads.css';
 
-function Downloads() {
-  const [downloading, setDownloading] = useState({});
-
-  const handleUnitDownload = async (subject, unit) => {
-    const key = `${subject.code}-${unit.id}`;
-    setDownloading((prev) => ({ ...prev, [key]: true }));
-    try {
-      await downloadUnitPDF(unit.topics, subject, unit);
-    } catch (err) {
-      console.error('PDF error:', err);
-    }
-    setDownloading((prev) => ({ ...prev, [key]: false }));
-  };
-
+function Downloads({ onPrintUnit }) {
   return (
     <div className="downloads">
       <div className="downloads-header">
@@ -49,21 +34,14 @@ function Downloads() {
                     <button
                       className="dl-btn"
                       style={{ background: subject.color }}
-                      onClick={() => handleUnitDownload(subject, unit)}
-                      disabled={downloading[key]}
+                      onClick={() => onPrintUnit({ subject, unit })}
                     >
-                      {downloading[key] ? (
-                        <span className="dl-spinner"></span>
-                      ) : (
-                        <>
-                          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                            <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4" />
-                            <polyline points="7 10 12 15 17 10" />
-                            <line x1="12" y1="15" x2="12" y2="3" />
-                          </svg>
-                          PDF
-                        </>
-                      )}
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4" />
+                        <polyline points="7 10 12 15 17 10" />
+                        <line x1="12" y1="15" x2="12" y2="3" />
+                      </svg>
+                      PDF
                     </button>
                   </div>
                 );

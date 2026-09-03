@@ -1,0 +1,58 @@
+.print-unit-root {
+  display: none;
+}
+
+@media print {
+  .print-unit-root {
+    display: block;
+    max-width: 100%;
+    padding: 0 24px;
+  }
+}
+
+.print-unit-header {
+  border-bottom: 3px solid;
+  padding-bottom: 12px;
+  margin-bottom: 24px;
+}
+
+.print-unit-header h1 {
+  font-size: 26px;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 4px;
+}
+
+.print-unit-header p {
+  font-size: 15px;
+  font-weight: 500;
+  margin-bottom: 2px;
+}
+
+.print-unit-meta {
+  font-size: 12px;
+  color: #94a3b8 !important;
+}
+
+.print-topic {
+  margin-bottom: 32px;
+}
+
+.print-topic-break {
+  page-break-before: always;
+  padding-top: 12px;
+}
+
+.print-topic h2 {
+  font-size: 20px;
+  font-weight: 700;
+  border-bottom: 2px solid;
+  padding-bottom: 6px;
+  margin-bottom: 4px;
+}
+
+.print-topic-hi {
+  color: #8b5cf6;
+  font-size: 13px;
+  margin-bottom: 14px;
+}
