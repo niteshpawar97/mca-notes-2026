@@ -49,3 +49,17 @@ body {
   background: #cbd5e1;
   border-radius: 3px;
 }
+
+/* Kindle-style reading themes — applied only while a topic is open
+   (see useReadingPrefs), sets the page background for the whole
+   viewport; component-level text/border overrides live in Content.css.
+   Screen-only: printed PDFs always force a white page (see App.css). */
+@media screen {
+  :root[data-reading-theme='sepia'] {
+    --bg: #f3ead6;
+  }
+
+  :root[data-reading-theme='dark'] {
+    --bg: #14171f;
+  }
+}

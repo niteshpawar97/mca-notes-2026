@@ -23,20 +23,50 @@
   font-size: 14px;
 }
 
+/* Breadcrumb text can shrink/ellipsize on narrow screens; the action
+   buttons never do (flex-shrink: 0 below) so Aa/PDF stay reachable
+   instead of spilling off the edge of the screen. */
+.breadcrumb-text {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+  overflow: hidden;
+}
+
 .breadcrumb-unit {
   padding: 4px 12px;
   border-radius: 6px;
   font-weight: 500;
   font-size: 13px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  flex-shrink: 1;
+  min-width: 0;
 }
 
 .breadcrumb-sep {
   color: #cbd5e1;
+  flex-shrink: 0;
 }
 
 .breadcrumb-day {
   color: #64748b;
   font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-width: 20px;
+}
+
+/* Top bar action buttons (reading options + PDF) */
+.content-topbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: auto;
+  flex-shrink: 0;
 }
 
 /* Download Button */
@@ -44,7 +74,6 @@
   display: flex;
   align-items: center;
   gap: 5px;
-  margin-left: auto;
   padding: 6px 14px;
   background: #6366f1;
   color: white;
@@ -108,7 +137,7 @@
 
 /* Body */
 .content-body {
-  font-size: 16px;
+  font-size: calc(16px * var(--reading-font-scale, 1));
   line-height: 1.8;
   color: #334155;
 }
@@ -233,6 +262,10 @@
 .callout-body {
   font-size: 15px;
   line-height: 1.7;
+  /* Callouts keep their own light pastel background in every reading
+     theme, so their text color stays fixed instead of following
+     .content-body's theme-driven color. */
+  color: #334155;
 }
 
 .callout-body p:first-child {
@@ -349,7 +382,7 @@
   }
 
   .content-body {
-    font-size: 15px;
+    font-size: calc(15px * var(--reading-font-scale, 1));
   }
 
   .nav-btn {
@@ -378,4 +411,123 @@
   .nav-btn.next {
     text-align: left;
   }
+}
+
+/* ===== Reading Themes (Sepia / Dark) =====
+   Page background is themed globally via --bg (index.css); everything
+   below re-colors the reading column's text, borders and cards so the
+   whole page — not just the content text — feels like an e-reader.
+   Callouts and code blocks intentionally keep their own fixed colors
+   (see .callout-body / .code-block) so they stay legible either way.
+   Scoped to screen only — printed PDFs always force a white page
+   (see App.css), so dark/sepia text colors must never leak into print
+   or they'd render as low-contrast text on white paper. */
+@media screen {
+html[data-reading-theme='sepia'] .content-topbar {
+  background: rgba(243, 234, 214, 0.95);
+}
+html[data-reading-theme='dark'] .content-topbar {
+  background: rgba(20, 23, 31, 0.95);
+}
+
+html[data-reading-theme='sepia'] .breadcrumb-day,
+html[data-reading-theme='sepia'] .content-body,
+html[data-reading-theme='sepia'] .highlight-text {
+  color: #43362a;
+}
+html[data-reading-theme='dark'] .breadcrumb-day,
+html[data-reading-theme='dark'] .content-body,
+html[data-reading-theme='dark'] .highlight-text {
+  color: #cbd5e1;
+}
+
+html[data-reading-theme='sepia'] .content-header h1,
+html[data-reading-theme='sepia'] .section-heading,
+html[data-reading-theme='sepia'] .subsection-heading {
+  color: #2b2013;
+}
+html[data-reading-theme='dark'] .content-header h1,
+html[data-reading-theme='dark'] .section-heading,
+html[data-reading-theme='dark'] .subsection-heading {
+  color: #f1f5f9;
+}
+
+html[data-reading-theme='sepia'] .section-heading {
+  border-bottom-color: #e0d2b0;
+}
+html[data-reading-theme='dark'] .section-heading {
+  border-bottom-color: #2d3340;
+}
+
+html[data-reading-theme='sepia'] .custom-blockquote {
+  background: #ece0c4;
+  color: #574632;
+}
+html[data-reading-theme='dark'] .custom-blockquote {
+  background: #1e2530;
+  color: #94a3b8;
+}
+
+html[data-reading-theme='sepia'] .table-wrapper {
+  border-color: #e0d2b0;
+}
+html[data-reading-theme='dark'] .table-wrapper {
+  border-color: #2d3340;
+}
+
+html[data-reading-theme='sepia'] .content-body th {
+  background: #ece0c4;
+  color: #2b2013;
+  border-bottom-color: #e0d2b0;
+}
+html[data-reading-theme='dark'] .content-body th {
+  background: #1e2530;
+  color: #f1f5f9;
+  border-bottom-color: #2d3340;
+}
+
+html[data-reading-theme='sepia'] .content-body td {
+  color: #43362a;
+  border-bottom-color: #e9dfc4;
+}
+html[data-reading-theme='dark'] .content-body td {
+  color: #cbd5e1;
+  border-bottom-color: #232936;
+}
+
+html[data-reading-theme='sepia'] .content-body tr:hover td {
+  background: #ece0c4;
+}
+html[data-reading-theme='dark'] .content-body tr:hover td {
+  background: #1e2530;
+}
+
+html[data-reading-theme='sepia'] .nav-btn {
+  background: #f3ead6;
+  border-color: #e0d2b0;
+}
+html[data-reading-theme='dark'] .nav-btn {
+  background: #1e2530;
+  border-color: #2d3340;
+}
+
+html[data-reading-theme='dark'] .content-nav {
+  border-top-color: #2d3340;
+}
+html[data-reading-theme='sepia'] .content-nav {
+  border-top-color: #e0d2b0;
+}
+
+html[data-reading-theme='sepia'] .reading-opts-btn,
+html[data-reading-theme='dark'] .reading-opts-btn {
+  background: transparent;
+  border-color: currentColor;
+  opacity: 0.75;
+}
+html[data-reading-theme='sepia'] .reading-opts-btn {
+  color: #43362a;
+}
+html[data-reading-theme='dark'] .reading-opts-btn {
+  color: #cbd5e1;
+}
 }

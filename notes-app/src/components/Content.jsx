@@ -1,24 +1,33 @@
 import MarkdownBody from './MarkdownBody';
+import ReadingOptions from './ReadingOptions';
+import { useReadingPrefs, FONT_SCALE } from '../hooks/useReadingPrefs';
 import './Content.css';
 
 function Content({ subject, unit, topic, onNext, onPrev, nextTitle, prevTitle }) {
+  const { theme, fontSize, setTheme, setFontSize } = useReadingPrefs();
+
   return (
-    <div className="content">
+    <div className="content" style={{ '--reading-font-scale': FONT_SCALE[fontSize] }}>
       <div className="content-topbar" style={{ borderBottomColor: subject.color + '40' }}>
         <div className="content-breadcrumb">
-          <span className="breadcrumb-unit" style={{ background: subject.color + '15', color: subject.color }}>
-            {subject.icon} {subject.title}
-          </span>
-          <span className="breadcrumb-sep">/</span>
-          <span className="breadcrumb-day">{unit.title}</span>
-          <button className="download-btn" onClick={() => window.print()} title="Print / Save as PDF">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4" />
-              <polyline points="7 10 12 15 17 10" />
-              <line x1="12" y1="15" x2="12" y2="3" />
-            </svg>
-            <span>PDF</span>
-          </button>
+          <div className="breadcrumb-text">
+            <span className="breadcrumb-unit" style={{ background: subject.color + '15', color: subject.color }}>
+              {subject.icon} {subject.title}
+            </span>
+            <span className="breadcrumb-sep">/</span>
+            <span className="breadcrumb-day">{unit.title}</span>
+          </div>
+          <div className="content-topbar-actions">
+            <ReadingOptions theme={theme} fontSize={fontSize} setTheme={setTheme} setFontSize={setFontSize} />
+            <button className="download-btn" onClick={() => window.print()} title="Print / Save as PDF">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4" />
+                <polyline points="7 10 12 15 17 10" />
+                <line x1="12" y1="15" x2="12" y2="3" />
+              </svg>
+              <span>PDF</span>
+            </button>
+          </div>
         </div>
       </div>
 
