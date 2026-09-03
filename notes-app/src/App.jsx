@@ -33,6 +33,64 @@ function App() {
     return () => window.removeEventListener('afterprint', onAfterPrint);
   }, []);
 
+  // URL routing so pages can be shared/bookmarked/refreshed directly.
+  // Scheme: / , /:subjectCode , /:subjectCode/:topicId , /plan , /downloads
+  const navigate = (path) => {
+    if (window.location.pathname !== path) {
+      window.history.pushState({}, '', path);
+    }
+  };
+
+  const applyRoute = (pathname) => {
+    const parts = pathname.split('/').filter(Boolean);
+
+    if (parts[0] === 'plan') {
+      setShowPlan(true);
+      setShowDownloads(false);
+      setSelectedUnit(null);
+      setSelectedTopic(null);
+      return;
+    }
+    if (parts[0] === 'downloads') {
+      setShowDownloads(true);
+      setShowPlan(false);
+      setSelectedUnit(null);
+      setSelectedTopic(null);
+      return;
+    }
+
+    const subject = subjects.find((s) => s.code === parts[0]);
+    if (!subject) {
+      setSelectedSubjectCode(null);
+      setSelectedUnit(null);
+      setSelectedTopic(null);
+      setShowPlan(false);
+      setShowDownloads(false);
+      return;
+    }
+
+    setSelectedSubjectCode(subject.code);
+    setShowPlan(false);
+    setShowDownloads(false);
+
+    let found = null;
+    if (parts.length >= 2) {
+      for (const unit of subject.units) {
+        const topic = unit.topics.find((t) => t.id === parts[1]);
+        if (topic) { found = { unit, topic }; break; }
+      }
+    }
+    setSelectedUnit(found ? found.unit : null);
+    setSelectedTopic(found ? found.topic : null);
+  };
+
+  useEffect(() => {
+    applyRoute(window.location.pathname);
+    const onPopState = () => applyRoute(window.location.pathname);
+    window.addEventListener('popstate', onPopState);
+    return () => window.removeEventListener('popstate', onPopState);
+  }, []);
+
   useEffect(() => {
     const onResize = () => {
       const mobile = window.innerWidth < 1024;
@@ -56,6 +114,7 @@ function App() {
     setShowPlan(false);
     setShowDownloads(false);
     closeSidebarOnMobile();
+    navigate(`/${code}`);
   };
 
   const handleGoHome = () => {
@@ -65,6 +124,7 @@ function App() {
     setShowPlan(false);
     setShowDownloads(false);
     closeSidebarOnMobile();
+    navigate('/');
   };
 
   const handleTopicSelect = (subjectCode, unit, topic) => {
@@ -74,6 +134,7 @@ function App() {
     setShowPlan(false);
     setShowDownloads(false);
     closeSidebarOnMobile();
+    navigate(`/${subjectCode}/${topic.id}`);
   };
 
   const handlePlanClick = () => {
@@ -82,6 +143,7 @@ function App() {
     setSelectedUnit(null);
     setSelectedTopic(null);
     closeSidebarOnMobile();
+    navigate('/plan');
   };
 
   const handleDownloadsClick = () => {
@@ -90,6 +152,7 @@ function App() {
     setSelectedUnit(null);
     setSelectedTopic(null);
     closeSidebarOnMobile();
+    navigate('/downloads');
   };
 
   const toggleSidebar = () => setSidebarOpen((prev) => !prev);
