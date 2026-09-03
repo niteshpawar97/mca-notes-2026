@@ -27,9 +27,9 @@ Population → Sample 1 → mean1
 Sampling Distribution = in sab means (mean1, mean2, mean3, ...) ka distribution
 ```
 
-**Central Limit Theorem (CLT)** — Agar sample size kaafi bada ho (n ≥ 30), toh sample means ka distribution approximately **Normal distribution** follow karta hai, chahe population khud normal ho ya na ho.
+**Central Limit Theorem (CLT)** — Agar sample size kaafi bada ho ($n \ge 30$), toh sample means ka distribution approximately **Normal distribution** follow karta hai, chahe population khud normal ho ya na ho.
 
-> Yaad Rakho — CLT ka matlab: "Bade sample size (n≥30) ke liye sample mean ka distribution hamesha approximately normal hota hai" — ye poori hypothesis testing ka foundation hai.
+> Yaad Rakho — CLT ka matlab: "Bade sample size ($n \ge 30$) ke liye sample mean ka distribution hamesha approximately normal hota hai" — ye poori hypothesis testing ka foundation hai.
 
 ---
 
@@ -37,12 +37,11 @@ Sampling Distribution = in sab means (mean1, mean2, mean3, ...) ka distribution
 
 Standard error (SE) batata hai ki sample mean, population mean se average kitna door hoga — ye sampling distribution ka **standard deviation** hai.
 
-```
-SE of sample mean = σ / √n
+$$
+SE_{\bar{x}} = \frac{\sigma}{\sqrt{n}}
+$$
 
-σ = population standard deviation
-n = sample size
-```
+Jahan $\sigma$ = population standard deviation, $n$ = sample size.
 
 Jitna bada sample size, utna chhota standard error — matlab bade sample se estimate zyada accurate hoti hai.
 
@@ -52,13 +51,13 @@ Jitna bada sample size, utna chhota standard error — matlab bade sample se est
 
 | Basis | Large Sample Test | Small Sample Test |
 |-------|-------------------|---------------------|
-| Sample size | n ≥ 30 | n < 30 |
+| Sample size | $n \ge 30$ | $n < 30$ |
 | Distribution used | Normal (Z) distribution | Student's t-distribution |
 | Population variance | Known ya sample variance se approx kar sakte hain | Usually unknown |
 | Test statistic | Z-test | t-test |
 | Shape | Standard normal (fixed) | t-distribution (depends on degrees of freedom, thoda flatter) |
 
-> Tip — Exam me sabse pehle **sample size check karo** — n ≥ 30 dikhe toh Z-test socho, n < 30 dikhe aur population variance unknown ho toh t-test socho. Yehi decision poore Unit III ka base hai.
+> Tip — Exam me sabse pehle **sample size check karo** — $n \ge 30$ dikhe toh Z-test socho, $n < 30$ dikhe aur population variance unknown ho toh t-test socho. Yehi decision poore Unit III ka base hai.
 
 ---
 
@@ -66,42 +65,34 @@ Jitna bada sample size, utna chhota standard error — matlab bade sample se est
 
 ### Null Hypothesis (H0) aur Alternative Hypothesis (H1)
 
-```
-Null Hypothesis (H0)     — "Koi difference/effect nahi hai" — status quo
-                            Example: H0: μ = 50 (population mean 50 hai)
+**Null Hypothesis ($H_0$)** — "Koi difference/effect nahi hai" — status quo. Example: $H_0: \mu = 50$ (population mean 50 hai).
 
-Alternative Hypothesis (H1) — "Kuch difference/effect hai" — jo hum prove
-                            karna chahte hain
-                            Example: H1: μ ≠ 50
-```
+**Alternative Hypothesis ($H_1$)** — "Kuch difference/effect hai" — jo hum prove karna chahte hain. Example: $H_1: \mu \neq 50$.
 
-Hum hamesha H0 ko test karte hain — ya toh use **reject** karte hain (evidence ke against jaane par) ya **fail to reject** karte hain (kaafi evidence na milne par).
+Hum hamesha $H_0$ ko test karte hain — ya toh use **reject** karte hain (evidence ke against jaane par) ya **fail to reject** karte hain (kaafi evidence na milne par).
 
-> Socho Aise — Ye bilkul court-case jaisa hai. H0 hai "accused innocent hai" (default assumption). Jab tak strong evidence na mile, hum H0 ko reject nahi karte. Hum kabhi "H0 sahi hai" nahi bolte, sirf "H0 reject nahi kar paaye" bolte hain.
+> Socho Aise — Ye bilkul court-case jaisa hai. $H_0$ hai "accused innocent hai" (default assumption). Jab tak strong evidence na mile, hum $H_0$ ko reject nahi karte. Hum kabhi "$H_0$ sahi hai" nahi bolte, sirf "$H_0$ reject nahi kar paaye" bolte hain.
 
 ### Type I aur Type II Errors
 
 | Error | Kab Hota Hai | Real-life Analogy |
 |-------|--------------|---------------------|
-| **Type I Error (α)** | H0 sahi tha, phir bhi reject kar diya (false alarm) | Innocent aadmi ko guilty declare karna |
-| **Type II Error (β)** | H0 galat tha, phir bhi accept kar liya (miss) | Guilty aadmi ko innocent declare karna |
+| **Type I Error ($\alpha$)** | $H_0$ sahi tha, phir bhi reject kar diya (false alarm) | Innocent aadmi ko guilty declare karna |
+| **Type II Error ($\beta$)** | $H_0$ galat tha, phir bhi accept kar liya (miss) | Guilty aadmi ko innocent declare karna |
 
-```
-                  H0 is actually True    H0 is actually False
-Reject H0         Type I Error (α)       Correct Decision
-Accept H0         Correct Decision       Type II Error (β)
-```
+| | $H_0$ is actually True | $H_0$ is actually False |
+|---|---|---|
+| Reject $H_0$ | Type I Error ($\alpha$) | Correct Decision |
+| Accept $H_0$ | Correct Decision | Type II Error ($\beta$) |
 
 ### Level of Significance
 
-Level of significance (α) wo probability hai jitna risk hum Type I error karne ka lene ke liye ready hain — commonly **α = 0.05 (5%)** ya **α = 0.01 (1%)** use hota hai.
+Level of significance ($\alpha$) wo probability hai jitna risk hum Type I error karne ka lene ke liye ready hain — commonly **$\alpha = 0.05$ (5%)** ya **$\alpha = 0.01$ (1%)** use hota hai.
 
-```
-α = 0.05  →  95% confidence ki hum sahi decision le rahe hain
-α = 0.01  →  99% confidence (zyada strict test)
-```
+- $\alpha = 0.05$ → 95% confidence ki hum sahi decision le rahe hain
+- $\alpha = 0.01$ → 99% confidence (zyada strict test)
 
-> Warning — "Accept H0" bolna technically galat hai — statisticians hamesha "fail to reject H0" bolte hain, kyunki hum kabhi 100% certain nahi ho sakte ki H0 bilkul sahi hai, sirf itna keh sakte hain ki hamare paas use reject karne ka kaafi evidence nahi mila.
+> Warning — "Accept $H_0$" bolna technically galat hai — statisticians hamesha "fail to reject $H_0$" bolte hain, kyunki hum kabhi 100% certain nahi ho sakte ki $H_0$ bilkul sahi hai, sirf itna keh sakte hain ki hamare paas use reject karne ka kaafi evidence nahi mila.
 
 ---
 
@@ -112,11 +103,11 @@ Level of significance (α) wo probability hai jitna risk hum Type I error karne 
 | Population | Poora data group |
 | Sample | Population ka subset |
 | Sampling distribution | Sample statistics (jaise mean) ka distribution |
-| Standard Error | SE = σ/√n |
-| Null Hypothesis (H0) | Default/no-effect assumption |
-| Alternative Hypothesis (H1) | Jo prove karna hai |
-| Type I Error (α) | True H0 ko reject karna |
-| Type II Error (β) | False H0 ko accept karna |
+| Standard Error | $SE = \dfrac{\sigma}{\sqrt{n}}$ |
+| Null Hypothesis ($H_0$) | Default/no-effect assumption |
+| Alternative Hypothesis ($H_1$) | Jo prove karna hai |
+| Type I Error ($\alpha$) | True $H_0$ ko reject karna |
+| Type II Error ($\beta$) | False $H_0$ ko accept karna |
 | Level of Significance | Type I error ka acceptable risk (usually 5% ya 1%) |
 
-> Example — Ek company claim karti hai ki unke bulbs ki average life 1000 hours hai. H0: μ = 1000. Agar sample test karne par pata chale life significantly kam hai, hum H0 reject kar denge (α = 0.05 level par) — yehi pura hypothesis testing process hai.
+> Example — Ek company claim karti hai ki unke bulbs ki average life 1000 hours hai. $H_0: \mu = 1000$. Agar sample test karne par pata chale life significantly kam hai, hum $H_0$ reject kar denge ($\alpha = 0.05$ level par) — yehi pura hypothesis testing process hai.
