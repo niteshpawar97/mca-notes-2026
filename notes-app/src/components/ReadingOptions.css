@@ -43,6 +43,9 @@
   box-shadow: 0 -8px 30px rgba(0, 0, 0, 0.2);
   max-width: 480px;
   margin: 0 auto;
+  max-height: 85vh;
+  overflow-y: auto;
+  overscroll-behavior: contain;
   animation: reading-opts-slide-up 0.2s ease;
 }
 

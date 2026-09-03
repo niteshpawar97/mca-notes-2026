@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { createPortal } from 'react-dom';
 import './ReadingOptions.css';
 
 const FONT_SIZES = [
@@ -17,13 +18,35 @@ const THEMES = [
 function ReadingOptions({ fontSize, setFontSize, theme, setTheme }) {
   const [open, setOpen] = useState(false);
 
+  // Lock background scroll while the sheet is open — the page has no
+  // scroll container of its own, so without this the page underneath
+  // can scroll while the panel (position: fixed) stays pinned to the
+  // viewport, leaving it looking detached/stuck over the content that
+  // scrolled past behind it.
+  useEffect(() => {
+    if (!open) return undefined;
+    const { style } = document.body;
+    const previousOverflow = style.overflow;
+    style.overflow = 'hidden';
+    return () => {
+      style.overflow = previousOverflow;
+    };
+  }, [open]);
+
   return (
     <>
       <button className="reading-opts-btn" onClick={() => setOpen(true)} title="Reading options — font size, theme">
         <span className="aa-icon">Aa</span>
       </button>
 
-      {open && (
+      {/* Portal to <body>: this button lives inside .content-topbar, which
+          has backdrop-filter — a CSS property that creates a new containing
+          block for position: fixed descendants. Without the portal, the
+          "fixed" backdrop/panel would actually be positioned relative to
+          that (scrolling, sticky) topbar instead of the real viewport, so
+          scrolling the page after opening the sheet would drag it out of
+          place instead of leaving it pinned to the bottom of the screen. */}
+      {open && createPortal(
         <>
           <div className="reading-opts-backdrop" onClick={() => setOpen(false)} />
           <div className="reading-opts-panel" role="dialog" aria-label="Reading options">
@@ -68,7 +91,8 @@ function ReadingOptions({ fontSize, setFontSize, theme, setTheme }) {
 
             <button className="reading-opts-close" onClick={() => setOpen(false)}>Done</button>
           </div>
-        </>
+        </>,
+        document.body,
       )}
     </>
   );
