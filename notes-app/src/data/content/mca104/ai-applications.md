@@ -15,6 +15,10 @@ AI ki har branch ka apna specific application area hota hai. Exam me is topic se
 
 > Example — Credit card company jab tumhe achanak ek alag city me bade transaction par "verify karo ye aap hain?" ka message bhejti hai, wo ML-based fraud detection hai.
 
+> Question — Netflix "aapke liye recommended" section dikhata hai based on tumne pehle kya-kya dekha hai. Ye ML ka kaunsa application hai?
+
+**Solution** — **Recommendation System** — past behavior (watch history) se pattern seekh kar similar content suggest karna.
+
 ---
 
 ### NLP Applications
@@ -25,6 +29,10 @@ AI ki har branch ka apna specific application area hota hai. Exam me is topic se
 | **Machine Translation** | Ek language ko doosri me convert karna (Google Translate) |
 | **Voice Assistants** | Speech ko samajh kar tasks perform karna (Siri, Alexa, Google Assistant) |
 | **Sentiment Analysis** | Reviews/tweets se pata lagana ki log positive ya negative feel kar rahe hain |
+
+> Question — Ek company apne product ke Twitter mentions collect karke pata lagana chahti hai ki overall customers khush hain ya naraaz. Kaunsi NLP application use hogi?
+
+**Solution** — **Sentiment Analysis** — tweets/reviews ke text se positive/negative feeling detect karna.
 
 ---
 
@@ -48,7 +56,7 @@ AI ki har branch ka apna specific application area hota hai. Exam me is topic se
 | **AC Temperature Control** | Room ke temperature ke hisaab se cooling ko smoothly adjust karna (sirf ON/OFF nahi) |
 | **Auto-focus Cameras** | Approximate distance ke basis par focus adjust karna |
 
-> Yaad Rakho — Fuzzy logic wahan use hoti hai jahan decision **exact black/white nahi**, balki **gradual/approximate** hota hai — jaise "kitna garam" ya "kitna gandा".
+> Yaad Rakho — Fuzzy logic wahan use hoti hai jahan decision **exact black/white nahi**, balki **gradual/approximate** hota hai — jaise "kitna garam" ya "kitna ganda".
 
 ---
 
@@ -76,3 +84,7 @@ AI sirf ek field tak limited nahi hai — ye almost har industry me use ho raha 
 > Tip — Exam me "AI ke applications" poocha jaye aur branch specify na ho, to industries ke hisaab se likho (Healthcare, Finance, Education, Transportation) — ye general answer sabhi branches ko cover kar leta hai.
 
 > Warning — Ek hi example ko baar-baar mat likho — jaise "recommendation system" ML ka best example hai, chatbot NLP ka. Har branch ke liye alag-alag example dena zyada marks deta hai kyunki ye dikhata hai ki tumhe concept clear hai.
+
+> Question — Ek self-driving car pehle apne aas-paas ke obstacles, signals aur lanes ko "dekhti" hai, phir decide karti hai kahan turn lena hai, aur physically steering/brake control karti hai. Ye AI ki kaunsi branches ka combination hai?
+
+**Solution** — Ye **Robotics** (sense + think + act, physical car ke through) aur **ML/Computer Vision** (obstacles-lanes-signals pehchaanna, jo isi tarah ka pattern-recognition hai) ka combination hai — exam me "Robotics + Machine Learning dono use hote hain self-driving cars me" likhna sahi hoga.

@@ -17,6 +17,10 @@
 | **Sensing** | Devices apne environment ko sense kar sakte hain (temperature, motion, light) |
 | **Safety** | Personal data aur physical safety dono ensure karna zaroori hai |
 
+> Question — Ek smart home me naya smart bulb add kiya, aur wo bina kisi extra setup ke turant existing system me kaam karne lage. Ye IoT ka kaunsa characteristic dikhata hai?
+
+**Solution** — **Scalability** — system me naye devices easily add ho sakte hain, bina poore system ko redesign kiye.
+
 ---
 
 ## Physical Design of IoT
@@ -58,6 +62,10 @@ Logical design IoT system ke **functional/logical components** ko define karta h
 
 > Yaad Rakho — Functional blocks yaad rakhne ka shortcut: **D-C-S-M-S-A** (Device, Communication, Services, Management, Security, Application). Exam me diagram bana kar dikhana extra marks deta hai.
 
+> Question — Ek fitness band ke andar laga heart-rate sensor "Physical Design" ka hissa hai ya "Logical Design" ka?
+
+**Solution** — **Physical Design** — sensor ek actual hardware component hai. "Logical Design" us baat se related hota, ki system ke andar sensor se aane wale data ko kaise process/manage/secure kiya jaata hai (Device, Communication, Services jaise functional blocks).
+
 ---
 
 ## Applications of IoT
@@ -94,3 +102,7 @@ Smart home devices jo remotely control ho sakte hain ya khud automatically react
 > Tip — Exam me "IoT applications" poocha jaye to categories me answer likho — Home, Industry, Healthcare, Agriculture, Surveillance — har category ka ek concrete example do.
 
 > Warning — Physical design aur Logical design ko confuse mat karo — Physical design **hardware components** (devices, sensors) ke baare me hai, Logical design **functional blocks/architecture** (kaise system organize hai) ke baare me hai.
+
+> Question — Smart irrigation system, smart traffic light, aur wearable health monitor — inhe unke sahi application category (Agriculture / Smart City / Healthcare) se match karo.
+
+**Solution** — Smart irrigation → **Smart Agriculture**. Smart traffic light → **Smart Cities**. Wearable health monitor → **Smart Healthcare / Surveillance (patient monitoring)**.

@@ -20,6 +20,10 @@ GIS system 5 major components se milkar bana hota hai. Ye ek favourite exam ques
 
 > Yaad Rakho — Components yaad rakhne ka shortcut: **H-S-D-P-M** (Hardware, Software, Data, People, Methods). Exam me sabhi 5 likhna zaroori hai, sirf 2-3 mat likhna.
 
+> Question — Ek GIS analyst satellite images ko QGIS software me daal kar flood-prone areas ka analysis kar raha hai. Is scenario me "Data" aur "Software" components kaunse hain?
+
+**Solution** — **Data** = satellite images (spatial information). **Software** = QGIS (jo us data ko process/analyze/display karta hai). Analyst khud "People" component hai, aur uska laptop "Hardware".
+
 ---
 
 ## GIS Kaam Kaise Karta Hai — Data Layers
@@ -38,6 +42,10 @@ Combined Map = All layers together
 **Do types ka data hota hai:**
 - **Spatial Data** — Location/geometry information (points, lines, polygons — jaise ek shehar ki boundary)
 - **Attribute Data** — Us location ke baare me additional information (jaise us shehar ki population, naam)
+
+> Question — Ek map par Bhopal shehar ki boundary line (polygon) khinchi hui hai, aur uske saath likha hai "Population: 24 lakh". Kaunsa hissa Spatial Data hai aur kaunsa Attribute Data?
+
+**Solution** — Boundary line (polygon shape/location) = **Spatial Data**. "Population: 24 lakh" (us location ke baare me extra info) = **Attribute Data**.
 
 ---
 
@@ -68,3 +76,7 @@ GIS traditional maps se zyada powerful isliye hai kyunki:
 4. Large amount ka geographic data efficiently store aur query kiya ja sakta hai
 
 > Warning — GIS ko sirf "digital map" samajhna galat hai. GIS map se aage jaake **analysis aur decision-making** ke liye use hota hai — ye important distinction exam me clarify karni chahiye.
+
+> Question — Ek Google Maps jaisa static PDF map, aur ek GIS system — dono me "digital map" dikhta hai. Farak kya hai?
+
+**Solution** — PDF map ek **fixed image** hai — usme layers on/off nahi kar sakte, koi analysis (jaise "kaunsi jagah flood risk zyada hai") nahi kar sakte. GIS map **interactive** hai — layers control kar sakte ho, real-time data update ho sakta hai, aur spatial analysis karke naye insights nikaal sakte ho. Yehi "map vs analysis tool" wala farak hai.

@@ -35,6 +35,10 @@ Jaise-jaise computers sasti aur powerful hoti gayi, **Distributed Computing** ka
 
 > Example — Web hosting companies apne servers ka cluster banate hain taaki agar ek server crash ho jaye, to doosra server turant traffic handle karne lage — website down nahi hoti.
 
+> Question — Ek company ke 5 servers ek hi data center me, same hardware/OS ke saath, high-speed local network se connect hain, aur ek single system jaisa behave karte hain. Ye cluster hai ya grid?
+
+**Solution** — **Cluster Computing** — same location, homogeneous nodes (same hardware/OS), tightly coupled via high-speed local network — ye teeno cluster ki pehchaan hain.
+
 ---
 
 ## Grid Computing
@@ -48,6 +52,10 @@ Jaise-jaise computers sasti aur powerful hoti gayi, **Distributed Computing** ka
 - Large-scale scientific/research problems ke liye use hota hai
 
 > Example — SETI@home project jisme duniya bhar ke logon ne apne idle computers ka processing power donate kiya taaki alien signals detect karne wali heavy calculations distribute ho sakein.
+
+> Question — SETI@home project me participate karne wale computers alag-alag countries me hain, alag-alag hardware/OS pe chal rahe hain, aur har koi apna computer independently manage karta hai. Ye cluster hai ya grid?
+
+**Solution** — **Grid Computing** — geographically dispersed, heterogeneous nodes, independent management — bilkul grid ki definition.
 
 ---
 
@@ -69,3 +77,7 @@ Ye ek bahut common exam question hai — teeno concepts ko clearly differentiate
 > Tip — Exam me "Cluster vs Grid" poocha jaye to sabse important differentiator likho: Cluster **tightly coupled + same location**, Grid **loosely coupled + geographically distributed**. Ye do points hi sabse zyada scoring hote hain.
 
 > Warning — Grid Computing aur Cloud Computing ko mat mila do — Grid computing resources **share** karne par focus karta hai (mostly research/scientific use), jabki Cloud Computing **on-demand service model** hai jisme third-party provider infrastructure deta hai pay-per-use basis par.
+
+> Question — Ek university ke research lab ko heavy scientific simulation chalani hai, aur wo poori duniya ki dusri universities ke idle computers ka processing power use karna chahti hai bina unhe kharide. Cluster, Grid, ya Cloud — kaunsa sahi fit hai?
+
+**Solution** — **Grid Computing** — kyunki maksad hai geographically-alag, multiple-organization ke resources (yahan alag universities) ko mil kar ek badi computational problem solve karna, na ki koi service kisi provider se pay-per-use lena (wo Cloud hota) ya same-location tightly-coupled system banana (wo Cluster hota).

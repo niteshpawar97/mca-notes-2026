@@ -27,6 +27,10 @@ Sabse common type — ye satellite Earth ki rotation speed ke saath match karke 
 
 > Yaad Rakho — Geostationary satellite ki height approx 36,000 km hoti hai aur ye 24 ghante me ek chakkar lagata hai — bilkul Earth ki rotation speed jitna, isliye "stationary" dikhta hai.
 
+> Question — DTH TV antenna ek baar sahi direction me set hone ke baad dobara adjust nahi karni padti, chahe mahino tak. Kyun?
+
+**Solution** — Kyunki DTH satellite **geostationary** hota hai — Earth ki rotation speed ke saath match karke ghoomta hai, isliye Earth se dekhne par hamesha ek hi fixed position par rehta hai. Antenna ek baar us fixed direction me point kar do, signal hamesha wahi se milta rahega.
+
 ---
 
 ## Radar — Radio Detection and Ranging
@@ -43,6 +47,10 @@ Radar ek system hai jo objects ko detect karne aur unki **distance, speed, aur d
 **Uses:** Airport air traffic control, weather monitoring, military tracking, speed detection (traffic police).
 
 > Example — Traffic police jo "speed gun" use karte hain overspeeding vehicles pakadne ke liye, wo bhi radar principle par kaam karta hai.
+
+> Question — Ek radar signal object tak jaake wapas aane me 2 microseconds leta hai. Radar object ki **speed** kaise pata karega (na ki sirf distance)?
+
+**Solution** — Radar **Doppler effect** use karta hai — jab object move kar raha hota hai, reflected signal ki **frequency** thodi change ho jaati hai (paas aa raha ho toh badh jaati hai, door ja raha ho toh ghat jaati hai). Ye frequency-change hi speed calculate karne ke liye use hoti hai — sirf jaane-aane ka time distance ke liye kaafi hai, speed ke liye Doppler shift chahiye.
 
 ---
 
@@ -65,6 +73,10 @@ Fiber optic cable ek thin glass ya plastic strand hoti hai jo data ko **light pu
 | Security | Zyada secure (tap karna mushkil) | Kam secure |
 
 > Tip — Exam me "Fiber optics ke advantages" poocha jaye to ye 4 points zaroor likho: high speed, high bandwidth, no electromagnetic interference, aur better security.
+
+> Question — Ek factory me bahut saari heavy machines chal rahi hain jo electromagnetic interference create karti hain, aur wahan reliable high-speed network chahiye. Fiber optic cable use karna sahi rahega ya copper wire?
+
+**Solution** — **Fiber optic** — kyunki iska signal **light pulses** se travel karta hai, na ki electrical current se, isliye machines ka electromagnetic interference (EMI) ispar asar nahi karta. Copper wire EMI se easily affect ho jaati, signal quality kharab hoti.
 
 ---
 
@@ -92,3 +104,7 @@ ISDN ek digital telecommunication standard hai jo **voice, video, aur data** —
 | ISDN | Medium | Local/regional | Digital voice + data over phone lines |
 
 > Warning — Students often confuse Radar aur Satellite communication — Radar sirf **detect aur track** karta hai objects ko (reflection based), jabki Satellite **relay** karta hai communication signals Earth ke do points ke beech. Dono ka purpose alag hai.
+
+> Question — In teen scenarios ko match karo: (a) Do pahado ke beech seedhi-line point-to-point link (b) Aeroplane ko track karna airport se (c) TV channels poore desh me broadcast karna.
+
+**Solution** — (a) **Microwave** (line-of-sight, point-to-point communication), (b) **Radar** (detect + track via signal reflection), (c) **Satellite** (geostationary, isliye ek hi position se poore desh ko cover kar leta hai).

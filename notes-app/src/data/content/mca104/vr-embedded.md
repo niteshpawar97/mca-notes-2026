@@ -27,6 +27,10 @@
 
 > Tip — Exam me VR applications likhte waqt kam se kam Gaming, Training, aur Education/Healthcare — teeno alag category zaroor cover karo.
 
+> Question — Ek airline apne naye pilots ko emergency landing ka practice deti hai bina actual plane use kiye, ek headset pehna kar. Ye VR ka kaunsa application hai?
+
+**Solution** — **Training Simulation** — risky real-world situations ka safe, virtual practice dena.
+
 ---
 
 ## Smart Systems
@@ -65,6 +69,14 @@
 
 > Socho Aise — Ek laptop "Swiss army knife" jaisa hai — bahut saare kaam kar sakta hai (browsing, gaming, coding). Embedded system ek "screwdriver" jaisa hai — sirf ek kaam ke liye bana hai, lekin us kaam ko bahut achhe se karta hai.
 
+> Question — Tumhare laptop aur tumhare microwave oven ke controller — dono me chip/processor hota hai. Laptop embedded system hai ya nahi? Kyun?
+
+**Solution** — **Laptop embedded system NAHI hai** — kyunki wo general-purpose hai (browsing, gaming, coding, kuch bhi kar sakta hai). Microwave oven ka controller **embedded system hai** — kyunki wo ek dedicated, fixed function (cooking time/power control) ke liye hi design kiya gaya hai.
+
 > Yaad Rakho — Embedded systems 3 cheezein zaroor yaad rakho — Dedicated function, Real-time response, aur Low power. Exam me "embedded system ki characteristics" poocha jaye to ye teeno core points hain.
 
 > Warning — Smart Systems aur Embedded Systems ko same mat samjho — har Embedded System zaroori nahi ki "smart" (self-learning/adaptive) ho, lekin bahut se Smart Systems embedded hardware par hi bane hote hain. Embedded System ek broader hardware+software concept hai, Smart System uska ek intelligent/adaptive use-case hai.
+
+> Question — Ek purana washing machine controller sirf fixed timer follow karta hai (koi sensing/adjustment nahi). Ek naya washing machine controller cloth-load sense karke khud water/time adjust karta hai. Dono embedded systems hain — lekin inme se kaunsa "Smart System" bhi hai?
+
+**Solution** — Dono **Embedded Systems** hain (dedicated function ke liye bane hain). Sirf **naya wala Smart System bhi hai** — kyunki wo apne environment ko sense karke (cloth load), analyze karke, khud action leta hai (adjust karna). Purana wala sirf fixed timer follow karta hai, koi sensing/adapting nahi karta.

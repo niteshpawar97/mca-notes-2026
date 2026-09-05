@@ -30,6 +30,10 @@ M-commerce ki growth ke peeche kuch major reasons hain:
 
 > Example — Paytm ne India me digital wallet revolution laya — QR code scan karke chai ki dukaan se lekar mall tak, sab jagah payment ek click me ho jaata hai.
 
+> Question — Zomato se khana order karna, aur Zomato app se hi bill ka payment UPI se karna — dono ka M-Commerce me kya role hai?
+
+**Solution** — Zomato se order karna **M-Commerce ka use-case** hai (mobile se buying), aur usmein UPI payment use hona **M-Commerce ko enable karne wali technology** hai (Mobile Payment System). Dono ek hi transaction ke do alag hisse hain.
+
 ---
 
 ## Technologies Enabling M-Commerce
@@ -44,6 +48,10 @@ M-commerce ko possible banane wali key technologies:
 | **NFC (Near Field Communication)** | Tap-to-pay contactless payments |
 | **QR Codes** | Scan karke instant payment |
 | **Cloud Computing** | Backend data storage aur processing ke liye |
+
+> Question — Bus me chadhte waqt tum apna phone ek machine ke paas le jaate ho aur "tap" karte ho, bina koi app khole, aur fare kat jaata hai. Kaunsi technology use ho rahi hai?
+
+**Solution** — **NFC (Near Field Communication)** — tap-to-pay contactless payment, jisme app kholne ki bhi zaroorat nahi padti, bas device ko close le jaana hota hai.
 
 ---
 
@@ -78,3 +86,7 @@ Digital Marketing wo process hai jisme businesses apne products/services ko **in
 > Socho Aise — SEO ek dukaan ko "main road par" set karne jaisa hai (log organically dhoondhte huye aa jaate hain), jabki PPC ads "banner lagana" jaisa hai jisme tum paise dekar directly customer ke saamne aate ho.
 
 > Warning — SEO aur PPC ko exam me mat mix karo — SEO **organic (free)** traffic laata hai, PPC **paid** traffic hota hai. Ye difference bahut common exam question hai.
+
+> Question — Ek company Google search me apni website ko "sponsored" tag ke saath top par turant dikhwa rahi hai, har click ka paisa de rahi hai. Ye SEO hai ya PPC?
+
+**Solution** — **PPC (Pay-Per-Click)** — "sponsored" tag aur "har click ka payment" dono PPC ki pehchaan hain. SEO me koi payment nahi hota, sirf website ko naturally rank karwane ki technique hoti hai.

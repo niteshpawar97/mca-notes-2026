@@ -31,6 +31,10 @@
 
 > Yaad Rakho — 5 characteristics yaad rakhne ka shortcut: **On-demand, Broad access, Pooling, Elasticity, Measured service**. Ye NIST ki official definition hai aur exam me directly poocha ja sakta hai.
 
+> Question — Diwali sale ke time ek e-commerce website ka traffic 10x badh jaata hai, aur server capacity apne aap badh jaati hai bina kisi manual intervention ke, sale khatam hote hi wapas normal ho jaati hai. Kaunsa characteristic hai ye?
+
+**Solution** — **Rapid Elasticity** — resources zaroorat ke hisaab se turant scale up/down ho jaate hain.
+
 ---
 
 ## Service Models
@@ -46,6 +50,10 @@ Cloud computing me teen main service models hote hain — is baat par depend kar
 > Socho Aise — IaaS ek "khaali plot" jaisa hai jisme tum khud ghar banate ho. PaaS ek "furnished flat" jaisa hai jisme structure ready hai, tum sirf apna saaman (application) daalte ho. SaaS ek "5-star hotel room" jaisa hai — sab kuch ready-to-use hai, bas jaakar use karo.
 
 > Tip — Exam me "IaaS vs PaaS vs SaaS" poocha jaye to control level ke hisaab se yaad rakho — IaaS me sabse zyada user control hota hai (infrastructure tak), SaaS me sabse kam (bas software use karo).
+
+> Question — Ek startup apna khud ka backend code likhna chahti hai, lekin server setup/maintenance ka jhanjhat nahi chahiye — bas code deploy karna chahti hai. Kaunsa service model use karega?
+
+**Solution** — **PaaS (Platform as a Service)** — coding karo, deployment/infrastructure provider (jaise Heroku) sambhalta hai.
 
 ---
 
@@ -63,6 +71,10 @@ Deployment model define karta hai ki cloud infrastructure **kahan hosted hai aur
 > Example — Ek bank apne customer transaction data ko **private cloud** me rakhega (security ke liye), lekin apni marketing website **public cloud** par host karega (cost-effective hai) — ye **hybrid cloud** approach hai.
 
 > Warning — Public Cloud ka matlab "free" nahi hota — public ka matlab hai ki infrastructure **shared aur kisi ke liye bhi available** hai (pay karke), private cloud **dedicated hoti hai ek hi organization ke liye**. Exam me ye confusion mat karo.
+
+> Question — Kai government departments milkar ek shared cloud infrastructure use karte hain jo sirf unke beech hi accessible hai, general public ke liye nahi. Kaunsa deployment model hai?
+
+**Solution** — **Community Cloud** — multiple organizations (common interest ke saath, yahan "government departments") mil kar shared infrastructure use kar rahe hain.
 
 ---
 
